@@ -29,7 +29,7 @@ nav ul {
 }
 
 nav a {
-  color: #b9C6ae;
+  color: #b9c6ae;
   font-weight: bold;
   text-decoration: none;
 }
@@ -41,17 +41,12 @@ nav a:hover {
 main {
   display: flex;
   flex: 1 1 0;
-  max-width: 1200px;
+  max-width: 96%;
   margin: 2% auto;
 }
 
-section {
-  flex: 1 1 0;
-  padding-right: 5%;
-}
-
 article {
-  border-bottom: 1px solid #d8a47f;
+  border-bottom: 1px solid #13293d;
 }
 
 article p {
@@ -65,20 +60,6 @@ article ul {
   list-style: circle;
 }
 
-aside {
-  width: 25%;
-}
-
-aside h2 {
-  font-size: 150%;
-}
-
-input, button {
-  width: 100%;
-  margin: 2% 0;
-  padding: 1%;
-}
-
 footer {
   display: flex;
   justify-content: center;
@@ -87,26 +68,21 @@ footer {
   color: #fff;
 }
 
-/* TODO: Add styles to display and hide the resource links */
-.resources ul {
-  display:none;
+/* TODO: Add code here to select all <a> elements that link to a file with a `.css` extension */
+li > a[href$=".css"]::after {
+  content: "📝";
+  /* Why does this work */
+  display:inline-block;
+  
 }
-.resources:hover ul{
-  display: contents;
-}
-
+  
 
 @media screen and (max-width: 768px) {
-  header, main {
+  header {
     flex-direction: column;
   }
 
-  section {
-    padding-right: 0;
-  }
-
-  aside {
-    width: 100%;
-    text-align: center;
+  main {
+    max-width: 1200px;
   }
 }
